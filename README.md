@@ -10,7 +10,7 @@ A high-performance, minimalist personal portfolio engineered with **React 19**, 
 
 ---
 
-## ⚡ Key Highlights
+## Key Highlights
 
 - **Systems Rigor & Scale**: Highlights production impact across Playto and Emplo AI, including `<100ms` P99 SLA FastAPI services and `1,000+` concurrent WebSocket connections.
 - **Dual Rigorous Academics**:
@@ -23,7 +23,7 @@ A high-performance, minimalist personal portfolio engineered with **React 19**, 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technologies |
 | :--- | :--- |
@@ -36,7 +36,7 @@ A high-performance, minimalist personal portfolio engineered with **React 19**, 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 portfolio/
@@ -79,7 +79,7 @@ portfolio/
 
 ---
 
-## 🚀 Getting Started Locally
+## Getting Started Locally
 
 ### Prerequisites
 
@@ -116,7 +116,7 @@ npm run lint
 
 ---
 
-## 🌐 Deploying to Vercel
+## Deploying to Vercel
 
 The repository is pre-configured for zero-config Vercel hosting:
 
@@ -129,7 +129,7 @@ The repository is pre-configured for zero-config Vercel hosting:
 
 ---
 
-## 📬 Connect
+## Connect
 
 - **Portfolio**: [Live Website](https://github.com/CuriousAd/Portfolio)
 - **LinkedIn**: [aditya-raj-gupta](https://www.linkedin.com/in/aditya-raj-gupta-41b8092b9/)
