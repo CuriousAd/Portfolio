@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FiBookOpen, FiTerminal, FiTrendingUp } from 'react-icons/fi';
+import { FiBookOpen } from 'react-icons/fi';
 import { personalData } from '../data/personal';
 import SpotlightCard from './react-bits/SpotlightCard';
 import BlurFade from './react-bits/BlurFade';

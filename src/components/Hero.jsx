@@ -5,7 +5,6 @@ import { personalData } from '../data/personal';
 import ShinyText from './react-bits/ShinyText';
 import BlurText from './react-bits/BlurText';
 import MagnetButton from './react-bits/MagnetButton';
-import SpotlightCard from './react-bits/SpotlightCard';
 import adityaPhoto from '../assets/aditya.jpg';
 import '../styles/Hero.css';
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiArrowUpRight, FiFileText } from 'react-icons/fi';
-import { personalData } from '../data/personal';
+import { FiMenu, FiX } from 'react-icons/fi';
 import MagnetButton from './react-bits/MagnetButton';
 import '../styles/Navbar.css';
 

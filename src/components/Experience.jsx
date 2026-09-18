@@ -1,10 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FiBriefcase, FiCalendar, FiCheck } from 'react-icons/fi';
 import { experienceData } from '../data/experience';
 import SpotlightCard from './react-bits/SpotlightCard';
 import BlurFade from './react-bits/BlurFade';
-import ShinyText from './react-bits/ShinyText';
 import '../styles/Experience.css';
 
 export const Experience = () => {

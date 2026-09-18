@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend, FiCopy, FiCheck, FiMessageSquare, FiClock, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend, FiCopy, FiCheck, FiMessageSquare, FiMapPin } from 'react-icons/fi';
 import { personalData } from '../data/personal';
 import SpotlightCard from './react-bits/SpotlightCard';
 import BlurFade from './react-bits/BlurFade';
