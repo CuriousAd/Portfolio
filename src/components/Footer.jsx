@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiGithub, FiLinkedin, FiMail, FiArrowUp } from 'react-icons/fi';
 import { personalData } from '../data/personal';
+import VisitorCounter from './VisitorCounter';
 import '../styles/Footer.css';
 
 export const Footer = () => {
@@ -15,8 +16,11 @@ export const Footer = () => {
           {personalData.name} <span style={{ color: 'var(--text-tertiary)' }}>&bull;</span> 2026
         </div>
 
-        <div className="footer-copyright">
-          Engineered with a minimalist monochrome aesthetic. Inspired by React Bits.
+        <div className="footer-center">
+          <div className="footer-copyright">
+            Engineered with a minimalist monochrome aesthetic. Inspired by React Bits.
+          </div>
+          <VisitorCounter />
         </div>
 
         <div className="footer-socials">
