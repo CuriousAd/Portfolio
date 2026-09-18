@@ -23,3 +23,12 @@ main {
     transform: translateY(0);
   }
 }
+
+.pre-footer-counter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem 2rem;
+  position: relative;
+  z-index: 5;
+}

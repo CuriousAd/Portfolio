@@ -36,16 +36,18 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  align-items: start;
 }
 
 @media (min-width: 900px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
   }
 }
 
 .project-card {
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
 }

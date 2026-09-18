@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiBookOpen } from 'react-icons/fi';
+import { FiBookOpen, FiZap, FiActivity, FiCpu } from 'react-icons/fi';
 import { personalData } from '../data/personal';
 import SpotlightCard from './react-bits/SpotlightCard';
 import BlurFade from './react-bits/BlurFade';
@@ -32,6 +32,8 @@ const benchmarks = [
   }
 ];
 
+const pillarIcons = [<FiZap key="0" />, <FiActivity key="1" />, <FiCpu key="2" />];
+
 export const About = () => {
   return (
     <section className="section" id="about">
@@ -52,10 +54,10 @@ export const About = () => {
         {/* Bento Grid: Resilient Card on Left (Full) + 2 Stacked Degree Cards on Right */}
         <div className="about-bento-container">
           <div className="about-resilient-split">
-            {/* Left: Full Height Resilient Card */}
+            {/* Left: Full Height Resilient Card with Architectural Pillars */}
             <BlurFade delay={0.1} className="about-left-col">
               <SpotlightCard className="about-thesis-card">
-                <div>
+                <div className="thesis-top-content">
                   <span className="thesis-terminal-tag">// ARCHITECTURAL THESIS</span>
                   <h3 className="thesis-title">
                     Engineering Resilient Backends with Client Obsession
@@ -66,6 +68,21 @@ export const About = () => {
                   <p className="thesis-p">
                     Combining computational mathematics at <strong>BIT Mesra</strong> with practical data science at <strong>IIT Madras</strong>, I design software where theoretical correctness meets battle-tested distributed scale.
                   </p>
+                </div>
+
+                <div className="thesis-pillars-wrapper">
+                  <span className="thesis-pillars-tag">// CORE ENGINEERING PILLARS</span>
+                  <div className="thesis-pillars-list">
+                    {personalData.pillars.map((pillar, idx) => (
+                      <div key={idx} className="thesis-pillar-item">
+                        <div className="pillar-item-icon">{pillarIcons[idx]}</div>
+                        <div className="pillar-item-body">
+                          <h4 className="pillar-item-title">{pillar.title}</h4>
+                          <p className="pillar-item-desc">{pillar.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </SpotlightCard>
             </BlurFade>
