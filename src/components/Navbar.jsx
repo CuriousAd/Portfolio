@@ -4,7 +4,6 @@ import MagnetButton from './react-bits/MagnetButton';
 import '../styles/Navbar.css';
 
 const navItems = [
-  { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
@@ -14,7 +13,7 @@ const navItems = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection, setActiveSection] = useState('experience');
 
   useEffect(() => {
     const handleScroll = () => {

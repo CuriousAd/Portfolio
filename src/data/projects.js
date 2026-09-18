@@ -74,30 +74,5 @@ export const projectsData = [
     githubUrl: "https://github.com/CuriousAd/Narrative-Consistency",
     liveUrl: null,
     accentColor: "#FFFFFF"
-  },
-  {
-    id: "realtime-event-bus",
-    title: "Distributed Real-Time Messaging & Event Bus",
-    subtitle: "High-Concurrency WebSocket & Redis Pub/Sub Infrastructure",
-    timeline: "Jan 2026",
-    featured: false,
-    category: "Distributed Systems",
-    description: "A resilient distributed messaging backend built to support 1,000+ concurrent active community users with reliable, low-latency WebSocket delivery and async task offloading.",
-    highlights: [
-      "Designed a real-time group chat system using Django Channels, WebSockets, and Redis Pub/Sub serving 1,000+ concurrent community members.",
-      "Engineered asynchronous task queues with Celery and Redis to offload heavy background operations, reducing API response times by 35%.",
-      "Instrumented production pipelines with Grafana dashboards for latency and error tracking, enabling rapid fault isolation and zero critical post-deploy defects."
-    ],
-    technologies: ["Django Channels", "WebSockets", "Redis Pub/Sub", "Celery", "Docker", "Grafana", "Python"],
-    metrics: [
-      { label: "Concurrency", value: "1,000+ Users" },
-      { label: "Response Time", value: "-35%" },
-      { label: "Uptime", value: "99.9%" }
-    ],
-    thumbnail: null,
-    videoDemo: null,
-    githubUrl: "https://github.com/CuriousAd",
-    liveUrl: null,
-    accentColor: "#FFFFFF"
   }
 ];

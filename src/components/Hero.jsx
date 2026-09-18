@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiTerminal } from 'react-icons/fi';
 import { personalData } from '../data/personal';
-import ShinyText from './react-bits/ShinyText';
 import BlurText from './react-bits/BlurText';
 import MagnetButton from './react-bits/MagnetButton';
 import adityaPhoto from '../assets/aditya.jpg';
@@ -30,14 +29,6 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Status Indicator */}
-            <div className="hero-status-wrap">
-              <div className="status-indicator-badge">
-                <span className="status-dot-pulse" />
-                <ShinyText text={personalData.status} color="#A1A1AA" shineColor="#FFFFFF" />
-              </div>
-            </div>
-
             {/* Headline with BlurText from React Bits */}
             <h1 className="hero-title">
               <BlurText text="About Me" delay={0.06} />

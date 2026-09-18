@@ -1,0 +1,344 @@
+/* SkillBubbleCloud Styles - Open Canvas, Pure Monochrome (Black & White with White Glow) */
+
+.bubble-open-canvas {
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Filter Pills - Pure Monochrome Floating in the Open */
+.bubble-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+.bubble-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.95rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bubble-filter-pill:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.bubble-filter-pill.active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.12), inset 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+.filter-pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  opacity: 0.5;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bubble-filter-pill.active .filter-pill-dot {
+  opacity: 1;
+  transform: scale(1.3);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+.filter-pill-count {
+  font-size: 0.68rem;
+  opacity: 0.6;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.38rem;
+  border-radius: var(--radius-full);
+  margin-left: 0.15rem;
+}
+
+.bubble-filter-pill.active .filter-pill-count {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0.95;
+  color: #FFFFFF;
+}
+
+/* Minimal Regroup Button */
+.bubble-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bubble-reset-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+}
+
+/* Context Domain Tagline (Unboxed) */
+.bubble-context-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.context-domain-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.context-domain-divider {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.context-domain-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Open SVG Canvas Wrapper (Zero Card Boundary) */
+.bubble-svg-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  max-height: 640px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  touch-action: none;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble-svg-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+  overflow: visible;
+}
+
+/* Bubble SVG Elements */
+.bubble-node {
+  transition: opacity 0.3s ease;
+}
+
+.bubble-circle {
+  cursor: grab;
+  transition: stroke-width 0.2s ease, stroke-opacity 0.2s ease, r 0.2s ease;
+}
+
+.bubble-node:active .bubble-circle {
+  cursor: grabbing;
+}
+
+.bubble-label {
+  font-family: var(--font-body);
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+  user-select: none;
+}
+
+.bubble-tier-tag {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+  user-select: none;
+}
+
+/* Floating Glassmorphic Monochrome Tooltip */
+.bubble-tooltip {
+  position: absolute;
+  pointer-events: none;
+  width: 250px;
+  transform: translate(-50%, -100%);
+  background: rgba(10, 10, 12, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  z-index: 50;
+}
+
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.tooltip-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tooltip-dot {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.tooltip-level-pill {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-full);
+}
+
+.tooltip-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.01em;
+}
+
+.tooltip-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0 0 0.65rem 0;
+}
+
+.tooltip-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.45rem;
+}
+
+/* Minimal Bottom Hint Bar */
+.bubble-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bubble-clusters-hint {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.bubble-interaction-hint {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .bubble-filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bubble-filter-pill {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .bubble-reset-btn {
+    display: none;
+  }
+
+  .bubble-svg-wrapper {
+    min-height: 440px;
+  }
+
+  .bubble-context-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .context-domain-divider {
+    display: none;
+  }
+
+  .bubble-bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bubble-svg-wrapper {
+    min-height: 380px;
+  }
+
+  .bubble-tooltip {
+    width: 220px;
+    padding: 0.75rem 0.85rem;
+  }
+}
