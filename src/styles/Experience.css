@@ -1,0 +1,209 @@
+.experience-timeline {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+
+@media (min-width: 768px) {
+  .experience-timeline {
+    padding-left: 2.8rem;
+  }
+}
+
+/* Timeline Vertical Line */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 7px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .experience-timeline::before {
+    left: 10px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3.25rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Node Dot */
+.timeline-node {
+  position: absolute;
+  top: 6px;
+  left: -2rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #08080A;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+@media (min-width: 768px) {
+  .timeline-node {
+    left: -2.8rem;
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.timeline-item:hover .timeline-node {
+  transform: scale(1.15);
+  background: #FFFFFF;
+}
+
+.exp-card {
+  padding: 2.25rem;
+}
+
+.exp-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .exp-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.exp-company {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.exp-role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.exp-period-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--card-border);
+  width: fit-content;
+  font-family: var(--font-mono);
+}
+
+.exp-summary {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.4rem;
+}
+
+/* Impact Metrics Row */
+.exp-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 640px) {
+  .exp-metrics-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.exp-metric-pill {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+
+.exp-metric-pill:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.exp-metric-value {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.exp-metric-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.2rem;
+}
+
+/* Bullet Points */
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.6rem;
+}
+
+.exp-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.exp-bullet-icon {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+/* Tech Pills */
+.exp-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.exp-tech-tag {
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 0.22rem 0.6rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}

@@ -1,0 +1,231 @@
+.hero-section {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: calc(var(--nav-height) + 3rem);
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-status-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.status-indicator-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.status-dot-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--status-green);
+  box-shadow: 0 0 10px var(--status-green-glow);
+  animation: greenPulse 2s infinite ease-in-out;
+}
+
+@keyframes greenPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.35rem;
+  color: #FFFFFF;
+  letter-spacing: -0.035em;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 3.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.85rem;
+  max-width: 580px;
+}
+
+.hero-desc strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Academic credentials stack - Two distinct, highly legible lines */
+.hero-cred-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 2.2rem;
+  max-width: 580px;
+}
+
+.hero-cred-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+
+.cred-prompt-icon {
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.cred-text strong {
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-right: 0.35rem;
+}
+
+.cred-cgpa-badge {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.1rem 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.hero-social-link:hover {
+  color: #FFFFFF;
+}
+
+/* Photo Stage - Clean, un-cluttered luxury framing */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-portrait-frame {
+  width: 100%;
+  max-width: 380px;
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: 0.85rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-portrait-frame:hover {
+  border-color: var(--card-border-hover);
+  transform: translateY(-3px);
+}
+
+.portrait-inner-wrap {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background: #111216;
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: contrast(1.03) brightness(0.97);
+  transition: transform 0.5s ease;
+}
+
+.hero-portrait-frame:hover .portrait-img {
+  transform: scale(1.02);
+}
+
+.portrait-footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0.6rem 0.2rem;
+}
+
+.portrait-name-tag {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.portrait-role-sub {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}

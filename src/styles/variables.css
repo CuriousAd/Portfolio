@@ -1,0 +1,59 @@
+:root {
+  /* Ultra-Clean Monochrome Palette (Dark & Minimalist) */
+  --bg-primary: #08080A;
+  --bg-secondary: #0F1014;
+  --bg-tertiary: #16171D;
+  --bg-elevated: #1A1C23;
+
+  /* Card Surfaces & Hairline Borders */
+  --card-bg: #0D0E12;
+  --card-bg-hover: #12141A;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(255, 255, 255, 0.22);
+  --card-border-active: rgba(255, 255, 255, 0.4);
+
+  /* Typography Colors - High Contrast Monochrome */
+  --text-primary: #EDEDED;
+  --text-secondary: #A1A1AA;
+  --text-tertiary: #71717A;
+  --text-muted: #52525B;
+  --text-inverse: #08080A;
+
+  /* Monochrome Highlights (White, Platinum & Charcoal) */
+  --accent-white: #FFFFFF;
+  --accent-silver: #E4E4E7;
+  --accent-glow: rgba(255, 255, 255, 0.15);
+  --accent-tint: rgba(255, 255, 255, 0.05);
+
+  /* Subtle Status Accent (for live/online indicator only) */
+  --status-green: #22C55E;
+  --status-green-glow: rgba(34, 197, 94, 0.4);
+
+  /* Gradients */
+  --gradient-text: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
+  --gradient-silver: linear-gradient(135deg, #FFFFFF 0%, #71717A 100%);
+  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --gradient-border: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.03) 100%);
+
+  /* Shadows - Crisp & Diffused */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-spotlight: 0 0 50px rgba(255, 255, 255, 0.04);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Layout */
+  --max-width: 1120px;
+  --nav-height: 68px;
+}
