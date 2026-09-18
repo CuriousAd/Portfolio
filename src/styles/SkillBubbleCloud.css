@@ -107,34 +107,6 @@
   color: #FFFFFF;
 }
 
-/* Context Domain Tagline (Unboxed) */
-.bubble-context-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.65rem;
-  flex-wrap: wrap;
-  padding: 0 1rem;
-}
-
-.context-domain-title {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
-}
-
-.context-domain-divider {
-  color: var(--text-muted);
-  font-size: 0.75rem;
-}
-
-.context-domain-desc {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
 
 /* Open SVG Canvas Wrapper (Zero Card Boundary) */
 .bubble-svg-wrapper {
@@ -315,14 +287,6 @@
     min-height: 440px;
   }
 
-  .bubble-context-row {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .context-domain-divider {
-    display: none;
-  }
 
   .bubble-bottom-bar {
     flex-direction: column;

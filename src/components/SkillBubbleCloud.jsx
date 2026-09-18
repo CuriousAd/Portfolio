@@ -256,9 +256,6 @@ export const SkillBubbleCloud = () => {
     sim.alpha(0.5).restart();
   }, []);
 
-  // Selected category info
-  const currentCategoryInfo = categoryMap[activeCategory] || categoryMap.all;
-
   // Skill counts per category
   const skillCounts = useMemo(() => {
     const counts = { all: SKILL_BUBBLES.length };
@@ -297,17 +294,6 @@ export const SkillBubbleCloud = () => {
           <FiRotateCcw size={12} />
           <span>Regroup</span>
         </button>
-      </div>
-
-      {/* Context Tagline (Unboxed, Pure Minimal Monochrome) */}
-      <div className="bubble-context-row">
-        <span className="context-domain-title">
-          {currentCategoryInfo.domainTitle}
-        </span>
-        <span className="context-domain-divider">•</span>
-        <span className="context-domain-desc">
-          {currentCategoryInfo.domainDesc}
-        </span>
       </div>
 
       {/* Open SVG Canvas (No Card Boundary) */}
