@@ -59,8 +59,9 @@ export const Projects = () => {
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => {
               const isExpanded = Boolean(expandedProjects[project.id]);
-              // Extract only first sentence/line of summary
-              const firstLine = project.description.split('.')[0] + '.';
+              // Extract first sentence cleanly without splitting on decimals (e.g. Gemini 3.1)
+              const firstSentenceMatch = project.description.match(/^.+?[.!?](?=\s|$)/);
+              const firstLine = firstSentenceMatch ? firstSentenceMatch[0] : project.description;
 
               return (
                 <motion.div
@@ -70,6 +71,7 @@ export const Projects = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.35, delay: index * 0.06 }}
+                  style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
                   <SpotlightCard className="project-card">
                     {/* Thumbnail / Video Demo Media Stage (Always visible) */}

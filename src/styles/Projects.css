@@ -47,7 +47,7 @@
 }
 
 .project-card {
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -171,14 +171,20 @@
   font-size: 1.35rem;
   font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
+  min-height: 1.85rem;
 }
 
 .project-summary-oneline {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 1.15rem;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  min-height: 4.65em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .project-expanded-area {
@@ -285,6 +291,7 @@
   align-items: center;
   gap: 0.65rem;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .project-btn {
