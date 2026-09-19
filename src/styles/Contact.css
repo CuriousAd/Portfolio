@@ -248,3 +248,76 @@
   min-height: 110px;
   resize: vertical;
 }
+
+/* Form Status Banner */
+.form-status-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  line-height: 1.4;
+  animation: fadeInStatus 0.25s ease-out;
+}
+
+.form-status-banner.success {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.form-status-banner.error {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #E2E8F0;
+}
+
+.status-icon {
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  color: #FFFFFF;
+}
+
+/* Dispatch Spinner */
+.dispatch-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-top-color: #08080A;
+  border-radius: 50%;
+  animation: dispatchSpin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes dispatchSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInStatus {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-transmitting {
+  opacity: 0.85;
+  cursor: wait !important;
+}
+
+.btn-success {
+  background-color: #FFFFFF !important;
+  color: #08080A !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3) !important;
+}
+

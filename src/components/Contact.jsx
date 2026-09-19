@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend, FiCopy, FiCheck, FiMessageSquare, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend, FiCopy, FiCheck, FiCheckCircle, FiAlertCircle, FiMessageSquare, FiMapPin } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 import { personalData } from '../data/personal';
 import SpotlightCard from './react-bits/SpotlightCard';
 import BlurFade from './react-bits/BlurFade';
@@ -13,7 +14,8 @@ export const Contact = () => {
     email: '',
     message: ''
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
+  const [statusMsg, setStatusMsg] = useState('');
 
   const handleCopyEmail = (e) => {
     e.preventDefault();
@@ -23,21 +25,76 @@ export const Contact = () => {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) return;
 
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Hi Aditya,\n\n${formData.message}\n\n---\nSender: ${formData.name}\nEmail: ${formData.email}`
-    );
-    window.location.href = `mailto:${personalData.email}?subject=${subject}&body=${body}`;
+    setStatus('sending');
+    setStatusMsg('');
 
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Graceful fallback if .env keys are not configured yet
+    if (!serviceId || !templateId || !publicKey) {
+      console.warn('EmailJS keys are missing in .env. Falling back to mailto client...');
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Hi Aditya,\n\n${formData.message}\n\n---\nSender: ${formData.name}\nEmail: ${formData.email}`
+      );
+      window.location.href = `mailto:${personalData.email}?subject=${subject}&body=${body}`;
+
+      setStatus('success');
+      setStatusMsg('Opening your email client (add EmailJS keys to .env for direct transmission)...');
+      setTimeout(() => {
+        setStatus('idle');
+        setStatusMsg('');
+        setFormData({ name: '', email: '', message: '' });
+      }, 4000);
+      return;
+    }
+
+    try {
+      const now = new Date();
+      const formattedTime = now.toLocaleString('en-US', {
+        dateStyle: 'medium',
+        timeStyle: 'short',
+      });
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: formData.name,
+          from_name: formData.name,
+          email: formData.email,
+          from_email: formData.email,
+          reply_to: formData.email,
+          to_name: personalData.name,
+          message: formData.message,
+          time: formattedTime,
+        },
+        publicKey
+      );
+
+      setStatus('success');
+      setStatusMsg('Message dispatched successfully! Aditya will get back to you shortly.');
       setFormData({ name: '', email: '', message: '' });
-    }, 3500);
+      setTimeout(() => {
+        setStatus('idle');
+        setStatusMsg('');
+      }, 5000);
+    } catch (error) {
+      console.error('EmailJS transmission error:', error);
+      setStatus('error');
+      setStatusMsg(
+        error?.text || 'Transmission failed. Please try again or reach out directly at ' + personalData.email
+      );
+      setTimeout(() => {
+        setStatus('idle');
+      }, 7000);
+    }
   };
 
   return (
@@ -196,13 +253,37 @@ export const Contact = () => {
                   />
                 </div>
 
+                {statusMsg && (
+                  <div className={`form-status-banner ${status}`}>
+                    {status === 'success' && <FiCheckCircle className="status-icon" />}
+                    {status === 'error' && <FiAlertCircle className="status-icon" />}
+                    <span>{statusMsg}</span>
+                  </div>
+                )}
+
                 <MagnetButton
                   variant="primary"
                   type="submit"
+                  disabled={status === 'sending'}
                   style={{ width: '100%', marginTop: '0.4rem' }}
+                  className={status === 'sending' ? 'btn-transmitting' : status === 'success' ? 'btn-success' : ''}
                 >
-                  <FiSend size={15} />
-                  <span>{submitted ? 'Opening Email Client...' : 'Dispatch Message via Email'}</span>
+                  {status === 'sending' ? (
+                    <>
+                      <span className="dispatch-spinner" />
+                      <span>Transmitting Dispatch...</span>
+                    </>
+                  ) : status === 'success' ? (
+                    <>
+                      <FiCheck size={16} />
+                      <span>Message Dispatched ✓</span>
+                    </>
+                  ) : (
+                    <>
+                      <FiSend size={15} />
+                      <span>Dispatch Message via Email</span>
+                    </>
+                  )}
                 </MagnetButton>
               </form>
             </SpotlightCard>

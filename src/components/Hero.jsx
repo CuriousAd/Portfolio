@@ -29,10 +29,21 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Headline with BlurText from React Bits */}
-            <h1 className="hero-title">
-              <BlurText text="About Me" delay={0.06} />
-            </h1>
+            {/* Headline with BlurText + animated dot accent */}
+            <div className="hero-title-row">
+              <h1 className="hero-title">
+                <BlurText text="About Me" delay={0.06} />
+              </h1>
+              <div className="dot-line-accent" aria-hidden="true">
+                {[...Array(4)].map((_, i) => (
+                  <span
+                    key={i}
+                    className="dot-square"
+                    style={{ animationDelay: `${i * 0.35}s` }}
+                  />
+                ))}
+              </div>
+            </div>
 
             {/* Shortened & Elevated Summary */}
             <p className="hero-desc">
@@ -112,6 +123,7 @@ export const Hero = () => {
                   loading="eager"
                 />
               </div>
+
               <div className="portrait-footer-info">
                 <div>
                   <div className="portrait-name-tag">{personalData.name}</div>
