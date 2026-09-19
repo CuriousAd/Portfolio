@@ -56,6 +56,12 @@ export const Navbar = () => {
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-inner">
+        {/* Brand */}
+        <a href="#hero" className="nav-brand" onClick={(e) => handleNavClick(e, '#hero')}>
+          <span className="brand-dot" />
+          <span>Aditya</span>
+        </a>
+
         {/* Desktop Links */}
         <nav>
           <ul className="nav-links-desktop">
@@ -112,19 +118,9 @@ export const Navbar = () => {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            style={{
-              marginTop: '0.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '0.75rem',
-              background: 'var(--gradient-warm)',
-              color: '#FFFFFF',
-              borderRadius: 'var(--radius-full)',
-              fontWeight: 600,
-            }}
+            className="mobile-cta-btn"
           >
-            Contact Aditya
+            Get In Touch
           </a>
         </div>
       )}

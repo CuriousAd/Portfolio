@@ -64,8 +64,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #10B981;
-  box-shadow: 0 0 6px #10B981;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
   animation: visitor-pulse 2s infinite ease-in-out;
   flex-shrink: 0;
 }
@@ -74,12 +74,12 @@
   0%, 100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
   }
   50% {
-    opacity: 0.4;
+    opacity: 0.35;
     transform: scale(0.85);
-    box-shadow: 0 0 2px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.25);
   }
 }
 

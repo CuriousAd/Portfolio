@@ -120,7 +120,7 @@ export const Contact = () => {
             <SpotlightCard className="contact-info-card">
               <div>
                 <div className="contact-status-chip">
-                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#22C55E' }} />
+                  <span className="contact-status-dot" aria-hidden="true" />
                   <span>Actively Interviewing &bull; Open to Roles</span>
                 </div>
 
@@ -135,7 +135,7 @@ export const Contact = () => {
                       <div className="channel-icon">
                         <FiMail />
                       </div>
-                      <div>
+                      <div className="channel-text-group">
                         <div className="channel-type">Email</div>
                         <a href={`mailto:${personalData.email}`} className="channel-val">
                           {personalData.email}
@@ -157,12 +157,12 @@ export const Contact = () => {
                       <div className="channel-icon">
                         <FiPhone />
                       </div>
-                      <div>
+                      <div className="channel-text-group">
                         <div className="channel-type">Phone & WhatsApp</div>
                         <div className="channel-val">{personalData.phone}</div>
                       </div>
                     </div>
-                    <span style={{ fontSize: '0.74rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-mono)' }}>
+                    <span className="channel-action-hint">
                       Call &bull; Msg
                     </span>
                   </a>
@@ -173,9 +173,9 @@ export const Contact = () => {
                       <div className="channel-icon">
                         <FiMapPin />
                       </div>
-                      <div>
+                      <div className="channel-text-group">
                         <div className="channel-type">Location & Availability</div>
-                        <div className="channel-val" style={{ fontSize: '0.86rem' }}>
+                        <div className="channel-val location-val">
                           India &bull; IST (UTC+5:30) &bull; Remote & Relocation
                         </div>
                       </div>

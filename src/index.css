@@ -15,6 +15,7 @@ html {
   text-rendering: optimizeLegibility;
   background-color: var(--bg-primary);
   color-scheme: dark;
+  overflow-x: hidden;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
   font-size: 15px;
   line-height: 1.65;
   overflow-x: hidden;
+  max-width: 100vw;
   position: relative;
   min-height: 100vh;
 }
@@ -120,9 +122,16 @@ img {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {

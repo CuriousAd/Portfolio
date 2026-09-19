@@ -99,7 +99,7 @@ export const Hero = () => {
               </a>
               <a
                 href={`mailto:${personalData.email}`}
-                className="hero-social-link"
+                className="hero-social-link email-link"
               >
                 <FiMail size={15} />
                 <span>{personalData.email}</span>
@@ -129,8 +129,8 @@ export const Hero = () => {
                   <div className="portrait-name-tag">{personalData.name}</div>
                   <div className="portrait-role-sub">{personalData.portraitRole}</div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.72rem', color: '#71717A' }}>
-                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#22C55E' }} />
+                <div className="portrait-status-available">
+                  <span className="portrait-status-dot" aria-hidden="true" />
                   <span>Available</span>
                 </div>
               </div>
