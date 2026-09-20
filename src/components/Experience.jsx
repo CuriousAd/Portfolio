@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiBriefcase, FiCalendar, FiCheck } from 'react-icons/fi';
+import { FiBriefcase, FiCalendar, FiCheck, FiExternalLink } from 'react-icons/fi';
 import { experienceData } from '../data/experience';
 import SpotlightCard from './react-bits/SpotlightCard';
 import BlurFade from './react-bits/BlurFade';
@@ -34,22 +34,24 @@ export const Experience = () => {
                   {/* Header */}
                   <div className="exp-header">
                     <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.25rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.25rem', flexWrap: 'wrap' }}>
                         <h3 className="exp-company">{exp.company}</h3>
                         {exp.badge && (
-                          <span
-                            style={{
-                              fontSize: '0.72rem',
-                              padding: '0.2rem 0.55rem',
-                              borderRadius: 'var(--radius-full)',
-                              backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                              border: '1px solid rgba(255, 255, 255, 0.12)',
-                              color: '#EDEDED',
-                              fontFamily: 'var(--font-mono)',
-                            }}
-                          >
+                          <span className="exp-badge">
                             {exp.badge}
                           </span>
+                        )}
+                        {exp.links?.demoUrl && (
+                          <a
+                            href={exp.links.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="exp-demo-badge"
+                            title={`Watch ${exp.company} live demo`}
+                          >
+                            <FiExternalLink size={11} />
+                            <span>Live Demo</span>
+                          </a>
                         )}
                       </div>
                       <div className="exp-role">{exp.role}</div>
@@ -86,13 +88,29 @@ export const Experience = () => {
                     ))}
                   </ul>
 
-                  {/* Technologies */}
-                  <div className="exp-tech-list">
-                    {exp.technologies.map((tech) => (
-                      <span key={tech} className="exp-tech-tag">
-                        {tech}
-                      </span>
-                    ))}
+                  {/* Technologies & Actions */}
+                  <div className="exp-footer">
+                    <div className="exp-tech-list">
+                      {exp.technologies.map((tech) => (
+                        <span key={tech} className="exp-tech-tag">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {exp.links?.demoUrl && (
+                      <div className="exp-actions">
+                        <a
+                          href={exp.links.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="exp-demo-btn-primary"
+                        >
+                          <FiExternalLink size={13} />
+                          <span>Live Demo Walkthrough</span>
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </SpotlightCard>
               </BlurFade>

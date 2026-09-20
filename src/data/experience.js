@@ -46,7 +46,8 @@ export const experienceData = [
       { label: "Cycle Time", value: "-60%" }
     ],
     links: {
-      companyUrl: "#"
+      companyUrl: "#",
+      demoUrl: "https://drive.google.com/file/d/1fvfCwLWsb2Pv9s93Bm3YOMz9GquwQAz_/view?usp=sharing"
     }
   }
 ];
