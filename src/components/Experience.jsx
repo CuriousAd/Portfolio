@@ -12,7 +12,7 @@ export const Experience = () => {
         {/* Section Header */}
         <BlurFade className="section-header">
           <span className="section-tag">
-            <FiBriefcase size={12} /> Work Experience
+            Work Experience
           </span>
           <h2 className="section-title">
             Production Engineering & <span className="gradient-text">Impact</span>
