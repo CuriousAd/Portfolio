@@ -61,7 +61,7 @@ export const Hero = () => {
               <div className="hero-cred-line">
                 <FiTerminal size={14} className="cred-prompt-icon" />
                 <span className="cred-text">
-                  <strong>IIT Madras:</strong> B.Sc. in Data Science & Applications <span className="cred-cgpa-badge">7.16 CGPA</span>
+                  <strong>IIT Madras:</strong> B.Sc. in Data Science & Applications <span className="cred-cgpa-badge">7.18 CGPA</span>
                 </span>
               </div>
             </div>
