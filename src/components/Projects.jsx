@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiLayers, FiPlay, FiGithub, FiExternalLink, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FiLayers, FiGithub, FiExternalLink, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { projectsData } from '../data/projects';
 import SpotlightCard from './react-bits/SpotlightCard';
 import BlurFade from './react-bits/BlurFade';
@@ -74,29 +74,6 @@ export const Projects = () => {
                   style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
                   <SpotlightCard className="project-card">
-                    {/* Thumbnail / Video Demo Media Stage (Always visible) */}
-                    <div
-                      className="project-media-stage"
-                      onClick={() => setSelectedProject(project)}
-                      title={`View ${project.title} architecture walkthrough`}
-                    >
-                      {project.thumbnail ? (
-                        <img src={project.thumbnail} alt={project.title} className="project-thumbnail-img" />
-                      ) : (
-                        <div className="media-placeholder-content">
-                          <div className="media-play-btn">
-                            <FiPlay style={{ marginLeft: '2px' }} />
-                          </div>
-                          <div className="media-placeholder-label">
-                            Architecture & Walkthrough
-                          </div>
-                          <span className="media-placeholder-hint">
-                            Click to inspect technical details
-                          </span>
-                        </div>
-                      )}
-                    </div>
-
                     {/* Card Body */}
                     <div className="project-card-body">
                       <div className="project-meta-row">
@@ -187,13 +164,13 @@ export const Projects = () => {
                               ))}
                             </div>
 
-                            {/* Walkthrough Button inside expanded area */}
+                            {/* Architecture Spec Modal Button */}
                             <button
                               className="project-btn project-btn-secondary"
                               onClick={() => setSelectedProject(project)}
-                              style={{ width: 'fit-content', marginTop: '0.25rem' }}
+                              style={{ width: 'fit-content', marginTop: '0.35rem' }}
                             >
-                              <FiPlay size={13} /> Open Full Walkthrough Modal
+                              <FiLayers size={13} /> Full Architecture Spec
                             </button>
                           </motion.div>
                         )}

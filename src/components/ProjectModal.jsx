@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiX, FiGithub, FiExternalLink, FiFilm, FiCheck } from 'react-icons/fi';
+import { FiX, FiGithub, FiExternalLink, FiCheck } from 'react-icons/fi';
 
 export const ProjectModal = ({ project, isOpen, onClose }) => {
   useEffect(() => {
@@ -121,23 +121,23 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
               </button>
             </div>
 
-            {/* Video / Preview Stage */}
-            <div style={{ padding: '1.5rem 1.75rem 1rem' }}>
-              <div
-                style={{
-                  width: '100%',
-                  aspectRatio: '16/9',
-                  borderRadius: 'var(--radius-md)',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  backgroundColor: '#050507',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                {project.videoDemo ? (
+            {/* Video Stage (Only rendered if videoDemo URL exists) */}
+            {project.videoDemo && (
+              <div style={{ padding: '1.25rem 1.75rem 0.5rem' }}>
+                <div
+                  style={{
+                    width: '100%',
+                    aspectRatio: '16/9',
+                    borderRadius: 'var(--radius-md)',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    backgroundColor: '#050507',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
                   <iframe
                     src={project.videoDemo}
                     title={`${project.title} Demo`}
@@ -145,40 +145,32 @@ export const ProjectModal = ({ project, isOpen, onClose }) => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
-                ) : (
-                  <div style={{ textAlign: 'center', padding: '2.5rem 1.5rem', color: '#FFFFFF', maxWidth: '440px' }}>
-                    <div
-                      style={{
-                        width: '52px',
-                        height: '52px',
-                        borderRadius: '50%',
-                        backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                        border: '1px solid rgba(255, 255, 255, 0.18)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        margin: '0 auto 1.15rem',
-                        color: '#FFFFFF',
-                      }}
-                    >
-                      <FiFilm size={22} />
-                    </div>
-                    <h4 style={{ color: '#FFFFFF', fontSize: '1.15rem', marginBottom: '0.4rem' }}>
-                      Architecture Walkthrough
-                    </h4>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: 1.55 }}>
-                      Comprehensive architectural highlights, execution metrics, and source repositories are detailed below.
-                    </p>
-                  </div>
-                )}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Content & Details */}
-            <div style={{ padding: '0.5rem 1.75rem 1.75rem' }}>
+            <div style={{ padding: '1.5rem 1.75rem 1.75rem' }}>
+              {project.subtitle && (
+                <div style={{ color: 'var(--text-primary)', fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.65rem' }}>
+                  {project.subtitle}
+                </div>
+              )}
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                 {project.description}
               </p>
+
+              {/* Metrics Bar */}
+              {project.metrics && (
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.65rem', marginBottom: '1.35rem' }}>
+                  {project.metrics.map((m, mIdx) => (
+                    <div key={mIdx} style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: 'var(--radius-sm)', padding: '0.65rem 0.5rem', textAlign: 'center' }}>
+                      <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>{m.value}</div>
+                      <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '0.2rem' }}>{m.label}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* Highlights */}
               <div style={{ marginBottom: '1.35rem' }}>

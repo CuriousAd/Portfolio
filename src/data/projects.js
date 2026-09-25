@@ -1,5 +1,31 @@
 export const projectsData = [
   {
+    id: "sponsa",
+    title: "Sponsa",
+    subtitle: "Real-Time UPI Tipping & Payment Engine for Streamers",
+    timeline: "May 2026",
+    featured: true,
+    category: "Fintech & Systems",
+    description: "A high-volume real-time UPI tipping platform for Indian YouTube live streamers, engineered to replace YouTube's 30% Super Chat cut with a 5–10% fee using Cashfree's split-settlement architecture.",
+    highlights: [
+      "Architected an event-driven payment ingest-process-notify pipeline using FastAPI, Beanie/Motor (MongoDB), and Cashfree EasySplit, splitting 90% directly into creator vaults at capture time with zero RBI PA liability.",
+      "Engineered an idempotent, semaphore-bounded payment webhook processor with HMAC-SHA256 signature verification and atomic MongoDB $inc wallet operations preventing double-crediting race conditions.",
+      "Implemented an ultra-low-latency OBS alert overlay powered by WebSocket fan-out broadcast and HTML5 audio synthesis for real-time live-stream visual tip notifications.",
+      "Built a modular full-stack monorepo with Google OAuth session management, Cashfree Payouts API for instant UPI withdrawals, and rate-limited API gateway."
+    ],
+    technologies: ["FastAPI", "MongoDB (Beanie)", "Cashfree EasySplit", "WebSockets", "React", "Docker", "Python", "HMAC-SHA256", "UPI"],
+    metrics: [
+      { label: "Creator Cut", value: "90%+" },
+      { label: "Webhook Ingest", value: "<50ms" },
+      { label: "Payment Rail", value: "Cashfree UPI" }
+    ],
+    thumbnail: null,
+    videoDemo: null,
+    githubUrl: "https://github.com/CuriousAd/Sponsa",
+    liveUrl: null,
+    accentColor: "#FFFFFF"
+  },
+  {
     id: "the-adventure",
     title: "The Adventure",
     subtitle: "AI-Powered Choose-Your-Own-Adventure Story Engine",
@@ -51,6 +77,32 @@ export const projectsData = [
     accentColor: "#FFFFFF"
   },
   {
+    id: "trekking-management",
+    title: "Trekking Management App",
+    subtitle: "Role-Based Expedition & Booking Management Platform",
+    timeline: "2025",
+    featured: true,
+    category: "Full-Stack & Systems",
+    description: "A role-based web application built with Flask and SQLite to coordinate multi-tier trekking expeditions, slot capacities, staff assignments, and automated booking lifecycles.",
+    highlights: [
+      "Implemented a 3-tier role-based access control (RBAC) architecture (Admin, Trek Staff, and Trekker) with session-based authentication, approval gates, and account status guards.",
+      "Engineered transactional booking mechanics featuring overbooking prevention, real-time slot restoration upon cancellation, and timestamped lifecycle audit tracking (started, completed, cancelled).",
+      "Designed a modular RESTful JSON API layer conforming to OpenAPI standards for programmatic trek listings, user management, and secure booking operations.",
+      "Built an administrative telemetry dashboard providing real-time queries across participant manifests, assigned staff operations, and multi-filter expedition searches."
+    ],
+    technologies: ["Python", "Flask", "SQLite", "REST API", "RBAC", "OpenAPI", "Session Auth", "HTML5/CSS3"],
+    metrics: [
+      { label: "User Roles", value: "3 RBAC Tiers" },
+      { label: "Booking Safety", value: "Zero-Overbooking" },
+      { label: "API Standard", value: "OpenAPI Spec" }
+    ],
+    thumbnail: null,
+    videoDemo: null,
+    githubUrl: "https://github.com/CuriousAd/trekking-management-app",
+    liveUrl: null,
+    accentColor: "#FFFFFF"
+  },
+  {
     id: "narrative-consistency",
     title: "Narrative Consistency Verification",
     subtitle: "Real-Time RAG & Contradiction Detection Engine",
@@ -76,3 +128,5 @@ export const projectsData = [
     accentColor: "#FFFFFF"
   }
 ];
+
+export default projectsData;

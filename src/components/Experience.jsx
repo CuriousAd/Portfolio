@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiBriefcase, FiCalendar, FiCheck, FiExternalLink } from 'react-icons/fi';
+import { FiCalendar, FiCheck, FiExternalLink } from 'react-icons/fi';
 import { experienceData } from '../data/experience';
 import SpotlightCard from './react-bits/SpotlightCard';
 import BlurFade from './react-bits/BlurFade';
