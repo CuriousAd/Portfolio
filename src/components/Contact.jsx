@@ -176,7 +176,12 @@ export const Contact = () => {
                       <div className="channel-text-group">
                         <div className="channel-type">Location & Availability</div>
                         <div className="channel-val location-val">
-                          India &bull; IST (UTC+5:30) &bull; Remote & Relocation
+                          <span>India</span>
+                          <span className="channel-tz-tag">IST (UTC+5:30)</span>
+                        </div>
+                        <div className="channel-availability-sub">
+                          <span className="channel-availability-dot" aria-hidden="true" />
+                          <span>Open to Remote & Relocation</span>
                         </div>
                       </div>
                     </div>

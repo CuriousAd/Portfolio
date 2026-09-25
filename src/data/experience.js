@@ -28,7 +28,7 @@ export const experienceData = [
   {
     id: "emplo-ai",
     company: "Emplo AI",
-    role: "Backend Developer",
+    role: "Lead Engineer & Co-Founder",
     period: "Feb 2025 – Dec 2025",
     location: "Remote",
     badge: "Impact",

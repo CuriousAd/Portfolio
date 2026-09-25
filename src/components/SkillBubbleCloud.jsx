@@ -506,7 +506,7 @@ export const SkillBubbleCloud = () => {
                 </text>
 
                 {/* Level Tag in Subtle Crisp White */}
-                {node.weight >= 1.0 && !isHovered && (
+                {Boolean(node.level) && node.weight >= 1.0 && !isHovered && (
                   <text
                     className="bubble-tier-tag"
                     x="0"
@@ -546,7 +546,9 @@ export const SkillBubbleCloud = () => {
                   <span className="tooltip-dot" />
                   {categoryMap[hoveredSkill.category]?.shortLabel}
                 </span>
-                <span className="tooltip-level-pill">{hoveredSkill.level}</span>
+                {hoveredSkill.level && (
+                  <span className="tooltip-level-pill">{hoveredSkill.level}</span>
+                )}
               </div>
 
               <h4 className="tooltip-title">{hoveredSkill.name}</h4>

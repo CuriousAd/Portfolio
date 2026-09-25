@@ -59,10 +59,10 @@ export const SKILL_BUBBLES = [
   // ── Frontend & Product (7) ──
   {
     id: "react",
-    name: "React 19",
-    lines: ["React", "19"],
+    name: "React",
+    lines: ["React"],
     category: "frontend",
-    level: "Expert",
+    level: "",
     weight: 1.15,
     description: "Component-driven design, concurrent rendering, virtual DOM optimizations, and reactive state management."
   },

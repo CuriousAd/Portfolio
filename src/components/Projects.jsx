@@ -66,12 +66,11 @@ export const Projects = () => {
               return (
                 <motion.div
                   key={project.id}
-                  layout
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.35, delay: index * 0.06 }}
-                  style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                  style={{ display: 'flex', flexDirection: 'column', alignSelf: 'start', width: '100%' }}
                 >
                   <SpotlightCard className="project-card">
                     {/* Card Body */}
@@ -111,8 +110,12 @@ export const Projects = () => {
                         )}
 
                         <button
+                          type="button"
                           className="project-btn project-btn-primary"
-                          onClick={() => toggleExpand(project.id)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleExpand(project.id);
+                          }}
                           style={{ marginLeft: 'auto' }}
                         >
                           <span>{isExpanded ? 'Show Less' : 'Read More'}</span>
