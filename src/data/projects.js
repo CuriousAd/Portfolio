@@ -1,5 +1,31 @@
 export const projectsData = [
   {
+    id: "desk-agent",
+    title: "Desk-Agent",
+    subtitle: "Deterministic AI Front Desk Agent",
+    timeline: "2026",
+    featured: true,
+    category: "AI & Full-Stack",
+    description: "A full-stack deterministic LLM agent that acts as a clinic front desk, capable of booking and rescheduling appointments with strict adherence to a JSON schema and emergency guardrails.",
+    highlights: [
+      "Orchestrated a raw OpenAI SDK agent loop to ensure strict deterministic behavior, directly handling validation errors and forcing schema adherence without relying on frameworks like LangChain.",
+      "Implemented a pre-LLM regex/keyword filter to strictly block and escalate medical emergencies to human agents, ensuring bulletproof safety guardrails.",
+      "Engineered rigorous state management by isolating a fresh in-memory SQLite database per request, perfectly handling race conditions and preventing double-bookings.",
+      "Built a modular FastAPI backend and a responsive React (Vite, Tailwind CSS) frontend to seamlessly simulate handoff queues and detailed conversation histories."
+    ],
+    technologies: ["Python", "FastAPI", "SQLite", "OpenAI SDK", "React", "Vite", "Tailwind CSS"],
+    metrics: [
+      { label: "LLM Engine", value: "gpt-4o-mini" },
+      { label: "Avg Latency", value: "3.5s - 5.0s" },
+      { label: "Tokens/Conv", value: "~1.5k - 3.5k" }
+    ],
+    thumbnail: null,
+    videoDemo: null,
+    githubUrl: "https://github.com/CuriousAd/desk-agent",
+    liveUrl: "https://desk-agent-theta.vercel.app/",
+    accentColor: "#FFFFFF"
+  },
+  {
     id: "sponsa",
     title: "Sponsa",
     subtitle: "Real-Time UPI Tipping & Payment Engine for Streamers",
